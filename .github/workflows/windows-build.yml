@@ -31,11 +31,11 @@ jobs:
         run: |
           mkdir build
           cd build
-          cmake .. -G "MSYS Makefiles" -DCMAKE_BUILD_TYPE=Release
-          make -j$(nproc)
+          cmake .. -G "MinGW Makefiles" -DCMAKE_BUILD_TYPE=Release
+          mingw32-make -j$(nproc)
       - name: Upload build artifact
         uses: actions/upload-artifact@v3
         with:
           name: pxview-windows-build
-          path: build.dir
+          path: build
 
