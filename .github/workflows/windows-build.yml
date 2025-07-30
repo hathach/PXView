@@ -33,4 +33,9 @@ jobs:
           cd build
           cmake .. -G "MSYS Makefiles" -DCMAKE_BUILD_TYPE=Release
           make -j$(nproc)
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: pxview-windows-build
+          path: build.dir
 
